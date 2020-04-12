@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: kubernetes-configmap-reload
-          image: {{ docker_repo }}/{{ ImageName }}:{{ ImageTag }}
+          image: ${docker_repo}/${ImageName }:${ImageTag}
