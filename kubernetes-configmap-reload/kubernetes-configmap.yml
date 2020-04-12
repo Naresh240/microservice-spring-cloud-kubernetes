@@ -29,5 +29,5 @@ spec:
       - image: naresh240/kubernetes-configmap-reload:latest
         name: kubernetes-configmap-reload
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: http
