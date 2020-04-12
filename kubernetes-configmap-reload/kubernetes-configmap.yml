@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: kubernetes-configmap-reload
-          image: ${params.docker_repo}/${params.ImageName}:${params.ImageTag}
+          image: kubernetes-configmap-reload:latest
