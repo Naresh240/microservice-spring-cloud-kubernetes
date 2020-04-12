@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: kubernetes-configmap-reload
-          image: naresh240/kubernetes-configmap-reload
+          image: {{ docker_repo }}/{{ ImageName }}
