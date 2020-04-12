@@ -7,9 +7,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 8080
     name: http
-    targetPort: 80
   selector:
     app: kubernetes-configmap-reload
 
@@ -29,5 +28,5 @@ spec:
       - image: naresh240/kubernetes-configmap-reload:latest
         name: kubernetes-configmap-reload
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: http
