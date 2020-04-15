@@ -1,8 +1,10 @@
-- hosts: localhost
+---
+- hosts: all
+  become: true
   tasks:
   - name: Deploy the service
     k8s:
       state: present
-      definition: "{{ lookup('template', 'kubernetes-configmap.yml') | from_yaml }}"
+      definition: "{{ lookup('template', 'service.yml') | from_yaml }}"
       validate_certs: no
       namespace: default
