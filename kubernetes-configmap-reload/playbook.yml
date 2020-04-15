@@ -1,5 +1,5 @@
 ---
-- hosts: nodes
+- hosts: localhost
   become: true
   tasks:
   - name: Deploy the service
