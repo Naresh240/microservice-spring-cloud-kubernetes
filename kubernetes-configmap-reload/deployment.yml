@@ -9,7 +9,7 @@ spec:
         app: kubernetes-configmap-reload
     spec:
       containers:
-      - image: "{{ .Values.image.repository }}/{{ .Values.iamge.name }}:{{ .Values.image.tag }}"
+      - image: naresh240/kubernetes-configmap-reload:latest
         name: kubernetes-configmap-reload
         ports:
         - containerPort: 8080
