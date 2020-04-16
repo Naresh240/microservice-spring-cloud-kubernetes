@@ -4,8 +4,6 @@
   - name: Deploy the service
     command: "kubectl apply -f service.yml"
     delegate_to: localhost
-    ignore_errors: yes
   - name: Deploy the application
-    command: "kubectl install deployment.yml"
+    command: "kubectl apply -fdeployment.yml"
     delegate_to: localhost
-    ignore_errors: yes
