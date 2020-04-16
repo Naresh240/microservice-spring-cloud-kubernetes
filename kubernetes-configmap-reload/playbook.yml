@@ -1,7 +1,7 @@
 - hosts: localhost
   vars:
     Repository: ""
-	  ImageName: ""
+    ImageName: ""
     imageTag: ""
   gather_facts: no
   tasks:
