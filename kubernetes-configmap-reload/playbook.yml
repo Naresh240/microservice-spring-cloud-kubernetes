@@ -1,8 +1,4 @@
 - hosts: localhost
-  vars:
-    Repository: ""
-    ImageName: ""
-    imageTag: ""
   gather_facts: no
   tasks:
   - name: Deploy the service
