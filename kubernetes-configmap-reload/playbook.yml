@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   gather_facts: no
   tasks:
   - name: Deploy the service
