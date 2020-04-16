@@ -1,4 +1,9 @@
 - hosts: localhost
+  gather_facts: no
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  roles:
+    - { role: python, tags: [ init, python, common, addusers] }
   tasks:
   - name: Deploy the service
     k8s:
