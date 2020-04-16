@@ -1,20 +1,17 @@
----
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx
+  name: kubernetes-configmap-reload
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
   template:
     metadata:
       labels:
-        app: nginx
+        app: kubernetes-configmap-reload
     spec:
       containers:
-        - name: nginx
-          image: "{{ image_id }}"
-          ports:
-          - containerPort: 80
+      - image: "{{ image_id }}"
+        name: kubernetes-configmap-reload
+        ports:
+        - containerPort: 8080
+          name: http
+
