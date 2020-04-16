@@ -2,14 +2,11 @@
   gather_facts: no
   tasks:
   - name: Deploy the service
-    k8s:
-      state: present
-      definition: "{{ lookup('template', 'service.yml') | from_yaml }}"
-      validate_certs: no
-      namespace: default
+    command: "kubectl apply -f service.yml"
+    delegate_to: localhost
+    ignore_errors: yes
+    namespace: default
   - name: Deploy the application
-    k8s:
-      state: present
-      validate_certs: no
-      namespace: default
-      definition: "{{ lookup('template', 'deployment.yml') | from_yaml }}"
+    command: "kubectl install deployment.yml"
+    delegate_to: localhost
+    ignore_errors: yes
