@@ -1,9 +1,13 @@
 - hosts: localhost
+  vars:
+    Repository: ""
+	  ImageName: ""
+    imageTag: ""
   gather_facts: no
   tasks:
   - name: Deploy the service
     command: "kubectl apply -f service.yml"
     delegate_to: localhost
   - name: Deploy the application
-    command: "kubectl apply -f deployment.yml"
+    command: "kubectl apply -f deployment.yml --set image.repository={{ Repository }} --set image.name={{ ImageName }} --set image.tag={{ imageTag }}"
     delegate_to: localhost
