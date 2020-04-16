@@ -5,7 +5,6 @@
     command: "kubectl apply -f service.yml"
     delegate_to: localhost
     ignore_errors: yes
-    namespace: default
   - name: Deploy the application
     command: "kubectl install deployment.yml"
     delegate_to: localhost
