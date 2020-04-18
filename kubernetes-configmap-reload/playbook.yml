@@ -1,8 +1,7 @@
 - hosts: localhost
-  tasks:
-  - name: ansible interupter 
-    vars:
+  vars:
     ansible_python_interpreter: '/usr/bin/python3'
+  tasks:
   - name: Deploy the service
     k8s:
       state: present
