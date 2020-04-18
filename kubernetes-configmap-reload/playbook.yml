@@ -1,9 +1,5 @@
 - hosts: localhost
   tasks:
-  - python_requirements_facts:
-      dependencies:
-        - openshift
-        - requests
   - name: Deploy the service
     k8s:
       state: present
