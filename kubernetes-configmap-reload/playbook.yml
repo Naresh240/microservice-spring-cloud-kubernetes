@@ -1,9 +1,14 @@
 - hosts: localhost
-  gather_facts: no
   tasks:
   - name: Deploy the service
-    command: "kubectl apply -f service.yml"
-    delegate_to: localhost
+    k8s:
+      state: present
+      definition: "{{ lookup('template', 'service.yml') | from_yaml }}"
+      validate_certs: no
+      namespace: default
   - name: Deploy the application
-    command: "kubectl apply -f deployment.yml"
-    delegate_to: localhost
+    k8s:
+      state: present
+      validate_certs: no
+      namespace: default
+      definition: "{{ lookup('template', 'deployment.yml') | from_yaml }}"
